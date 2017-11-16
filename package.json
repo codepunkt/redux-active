@@ -1,0 +1,48 @@
+{
+  "name": "redux-active",
+  "version": "1.0.0",
+  "description": "Manages users active & idle state",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "browser": "lib/umd/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c && rollup -c rollup.umd-config.js",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "redux",
+    "react",
+    "idle",
+    "active",
+    "user",
+    "monitor",
+    "reducer",
+    "middleware"
+  ],
+  "author": "Christoph Werner <christoph@codepunkt.de>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.11.0",
+    "eslint-config-react-app": "^2.0.1",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-import": "^2.8.0",
+    "prettier": "^1.8.2",
+    "rollup": "^0.51.6",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-cleanup": "^2.0.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-filesize": "^1.4.2",
+    "rollup-plugin-license": "^0.5.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "uglify-es": "^3.1.9"
+  }
+}

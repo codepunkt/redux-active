@@ -1,0 +1,21 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.useTabs": false,
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.semi": false,
+  "workbench.editor.labelFormat": "short",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true
+  },
+  "search.exclude": {
+    "coverage": true,
+    "build": true,
+    "node_modules": true,
+    "npm-debug.log.*": true,
+    "package-lock.json": true
+  }
+}
