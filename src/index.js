@@ -27,6 +27,13 @@ export const createActiveMiddleware = (
   let lastInteraction = +new Date()
 
   const activeMiddleware = ({ dispatch, getState }) => {
+    if (typeof stateSelector(getState()) === 'undefined') {
+      console.error(
+        'Error: redux-active has detected a problem with your stateSelector configuration!'
+      )
+      return next => action => next(action)
+    }
+
     activeMiddleware.interval = setInterval(() => {
       if (
         +new Date() - lastInteraction > idleTimeout &&
