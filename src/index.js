@@ -6,9 +6,8 @@ export const IS_ACTIVE = `${actionTypeNamespace}/IS_ACTIVE`
 export const createActiveMiddleware = (
   {
     cancelNextMiddleware = false,
-    checkMs = 1000,
-    customThrottle,
     eventTarget = window,
+    eventThrottleTimeout = 250,
     eventTypes = [
       'click',
       'focus',
@@ -19,34 +18,33 @@ export const createActiveMiddleware = (
       'touchmove',
       'wheel',
     ],
+    idleCheckInterval = 1e3,
+    idleTimeout = 6e4,
     stateSelector = state => state.isActive,
-    idleMs = 60000,
-    throttleMs = 250,
+    throttle = require('lodash/throttle'),
   } = {}
 ) => {
   let lastInteraction = +new Date()
 
-  const throttle = customThrottle || require('lodash/throttle')
-
   const activeMiddleware = ({ dispatch, getState }) => {
     activeMiddleware.interval = setInterval(() => {
       if (
-        +new Date() - lastInteraction > idleMs &&
+        +new Date() - lastInteraction > idleTimeout &&
         !stateSelector(getState())
       ) {
-        dispatch({ type: IS_IDLE, payload: { idleMs } })
+        dispatch({ type: IS_IDLE, payload: { idleTimeout } })
       }
-    }, checkMs)
+    }, idleCheckInterval)
 
     const onInteraction = throttle(event => {
       lastInteraction = +new Date()
       if (stateSelector(getState())) {
         dispatch({
           type: IS_ACTIVE,
-          payload: { idleMs, eventType: event.type },
+          payload: { idleTimeout, eventType: event.type },
         })
       }
-    }, throttleMs)
+    }, eventThrottleTimeout)
 
     eventTypes.forEach(eventType =>
       eventTarget.addEventListener(eventType, onInteraction, true)
