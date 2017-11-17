@@ -30,7 +30,7 @@ export const createActiveMiddleware = (
     activeMiddleware.interval = setInterval(() => {
       if (
         +new Date() - lastInteraction > idleTimeout &&
-        !stateSelector(getState())
+        stateSelector(getState())
       ) {
         dispatch({ type: IS_IDLE, payload: { idleTimeout } })
       }
@@ -38,7 +38,7 @@ export const createActiveMiddleware = (
 
     const onInteraction = throttle(event => {
       lastInteraction = +new Date()
-      if (stateSelector(getState())) {
+      if (!stateSelector(getState())) {
         dispatch({
           type: IS_ACTIVE,
           payload: { idleTimeout, eventType: event.type },
