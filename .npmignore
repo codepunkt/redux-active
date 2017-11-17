@@ -1,3 +1,11 @@
-.vscode/
-src/
-node_modules/
+.DS_Store
+.editorconfig
+.gitignore
+.eslintrc.js
+.babelrc
+npm-debug.log
+rollup.config.js
+rollup.umd-config.js
+.vscode
+src
+node_modules
