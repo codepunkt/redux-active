@@ -1,11 +1,8 @@
-const actionTypeNamespace = '@@active'
-
-export const IS_IDLE = `${actionTypeNamespace}/IS_IDLE`
-export const IS_ACTIVE = `${actionTypeNamespace}/IS_ACTIVE`
+export const IS_IDLE = `@@active/IS_IDLE`
+export const IS_ACTIVE = `@@active/IS_ACTIVE`
 
 export const createActiveMiddleware = (
   {
-    cancelNextMiddleware = false,
     eventTarget = window,
     eventThrottleTimeout = 250,
     eventTypes = [
@@ -57,27 +54,11 @@ export const createActiveMiddleware = (
       eventTarget.addEventListener(eventType, onInteraction, true)
     )
 
-    return next => action => {
-      if (![IS_IDLE, IS_ACTIVE].includes(action.type)) {
-        return next(action)
-      }
-
-      if (!cancelNextMiddleware) {
-        next(action)
-      }
-    }
+    return next => action => next(action)
   }
 
   return activeMiddleware
 }
 
-export const activeReducer = (state = true, action) => {
-  switch (action.type) {
-    case IS_IDLE:
-      return false
-    case IS_ACTIVE:
-      return true
-    default:
-      return state
-  }
-}
+export const activeReducer = (state = true, { type }) =>
+  type === IS_IDLE ? false : type === IS_ACTIVE ? true : state
