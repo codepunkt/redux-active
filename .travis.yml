@@ -3,4 +3,4 @@ node_js:
   - "8.9.1"
   - "9"
 after_script:
-  - cat ./coverage/lcov.info | `yarn bin`/coveralls
+  - cat ./coverage/lcov.info | `npm bin`/coveralls
