@@ -16,6 +16,12 @@ This has a peer dependency of `redux`, which will have to be installed as well.
 npm install --save redux-active
 ```
 
+##### UMD
+
+`redux-active` is also published as an UMD build. You can use it via the [unpkg](https://unpkg.com/) CDN:
+
+[https://unpkg.com/redux-active@latest/dist/umd/redux-active.min.js](https://unpkg.com/redux-active@latest/dist/umd/redux-active.min.js)
+
 ## Setup
 
 First, you must add the middleware to your `redux` store.
