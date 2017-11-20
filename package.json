@@ -5,6 +5,10 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "browser": "dist/umd/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codepunkt/redux-active.git"
+  },
   "scripts": {
     "build": "rollup -c && rollup -c rollup.umd-config.js",
     "lint": "eslint src/",
