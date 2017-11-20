@@ -5,6 +5,7 @@ import pkg from './package.json'
 import config from './rollup.config.js'
 
 export default Object.assign({}, config, {
+  input: 'src/index.umd.js',
   output: {
     file: pkg.browser,
     format: 'umd',
