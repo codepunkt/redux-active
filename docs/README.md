@@ -1,9 +1,9 @@
 <img title="redux-active" src="redux-active.png" width="500" style="margin-top:20px;">
 
-[![build status](https://img.shields.io/travis/reactjs/redux/master.svg)](https://travis-ci.org/redux-active/redux-active)
+[![build status](https://img.shields.io/travis/reactjs/redux/master.svg)](https://travis-ci.org/codepunkt/redux-active)
 [![npm version](https://img.shields.io/npm/v/redux-active.svg)](https://www.npmjs.com/package/redux-active)
-[![code climate](https://codeclimate.com/github/redux-active/redux-active/badges/gpa.svg)](https://codeclimate.com/github/redux-active/redux-active)
-[![Greenkeeper badge](https://badges.greenkeeper.io/redux-active/redux-active.svg)](https://greenkeeper.io/)
+[![code climate](https://codeclimate.com/github/codepunkt/redux-active/badges/gpa.svg)](https://codeclimate.com/github/codepunkt/redux-active)
+[![Greenkeeper badge](https://badges.greenkeeper.io/codepunkt/redux-active.svg)](https://greenkeeper.io/)
 
 [Redux](http://github.com/reactjs/redux) middleware & reducer to easily manage your users active/idle state
 
