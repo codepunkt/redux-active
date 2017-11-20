@@ -21,7 +21,6 @@ export const injectThrottle = injected => (
     throttle = injected || require('lodash/throttle'),
   } = {}
 ) => {
-  console.log('throttle is', throttle)
   let lastInteraction = +new Date()
 
   const activeMiddleware = ({ dispatch, getState }) => {
