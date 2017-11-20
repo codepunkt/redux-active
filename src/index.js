@@ -31,7 +31,7 @@ export const createActiveMiddleware = (
       return next => action => next(action)
     }
 
-    activeMiddleware.interval = setInterval(() => {
+    setInterval(() => {
       if (
         +new Date() - lastInteraction > idleTimeout &&
         stateSelector(getState())
