@@ -1,4 +1,4 @@
-<img title="redux-active" src="logo/redux-active.png" width="500" style="margin-top:20px;">
+<p align="center"><img title="redux-active" src="logo/redux-active.png" width="500" style="margin-top:20px;"></p>
 
 [![build status](https://img.shields.io/travis/reactjs/redux/master.svg)](https://travis-ci.org/codepunkt/redux-active)
 [![npm version](https://img.shields.io/npm/v/redux-active.svg)](https://www.npmjs.com/package/redux-active)
