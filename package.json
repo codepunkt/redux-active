@@ -30,7 +30,7 @@
   "author": "Christoph Werner <christoph@codepunkt.de>",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "4.17.10"
   },
   "peerDependencies": {
     "redux": "3.*"
